@@ -33,10 +33,10 @@ jobs:
       #Run Sonar scanner
       - name: SonarQube Scan
         run: sonar-scanner
-           -Dsonar.host.url=${{ secrets.SONAR_URL }}
-           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-           -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+           -Dsonar.host.url=https://sonarcloud.io
+           -Dsonar.login=3bff37a4e21ae48a0e5bebaddf672cba660b3ede
+           -Dsonar.organization=vprofile-actions1991
+           -Dsonar.projectKey=vproapp24
            -Dsonar.sources=src/
            -Dsonar.junit.reportsPath=target/surefire-reports/
            -Dsonar.jacoco.reportsPath=target/jacoco.exec
@@ -51,6 +51,6 @@ jobs:
         #Force to fail step after soecific time
         timeout-minutes: 5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+          SONAR_TOKEN: 3bff37a4e21ae48a0e5bebaddf672cba660b3ede
+          SONAR_HOST_URL: https://sonarcloud.io
       
